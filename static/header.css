@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    min-width: 1280px;
+    height: 66px;
+    background-color: rgba(17,17,17,0.75);
+    box-shadow: 0 3px 7px 0 rgb(0 0 0 / 35%);
+}
+
+.logo{
+    float: left;
+    margin-left: 80px;
+    width: 200px;
+    height: 105px;
+}
+
+.logo-size{
+    width: 120px;
+}
+
+.navbar-wrap{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10px;
+    margin-left: 40px;
+}
+
+.nav{
+    display: inline-block;
+    position: relative;
+    margin-left: -34px;
+}
+
+.nav .nav-item{
+    font-size: 14px;
+    margin: 0 15px !important;
+    justify-items: right;
+}
+
+
+.nav-item:hover,
+.nav-item--focus{
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: white;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: auto;
+    height: 66px;
+    line-height: 66px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.poster {
+
+    height: auto;
+    width: 100%;
+}
+
+
+
+.poster .gambar{
+    width: 100%;
+    height: auto;
+    animation: gambar 1s ease 0s 1 normal forwards;
+}
+
+@keyframes gambar {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.poster .center{
+    position :absolute;
+    align-self: center;
+    text-align: right;
+    margin-right: 30px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: center 1.8s ease 0s 1 normal forwards;
+}
+
+.poster .center-p{
+    position: absolute;
+}
+
+@keyframes center {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media only screen 
+   and (min-width : 320px) and (max-width : 768px) {
+    .logo{
+        margin-left: 5px;
+        width: 120px;
+    }
+}

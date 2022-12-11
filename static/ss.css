@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url("img/university.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+.error{
+    color: red !important;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 300px;
+    padding: 30px;
+    border : 2px solid lightcyan;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.box input[type="text"],
+.box input[type="password"]{
+    font-size: 20px;
+    border: 0;
+    background-color: none;
+    display: block;
+    margin : 15px auto;
+    text-align: center;
+    border : 3px solid yellowgreen;
+    padding: 10px 10px;
+    width: 220px;
+    outline: none;
+    color: black;
+    border-radius: 20px;
+    transition: all .2s ease-in;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus{
+    width: 200px;
+    border-color: brown;
+}
+
+.login-form{
+    border: 1px solid black;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.box input[type="submit"]{
+    background:none;
+    color:antiquewhite;
+    text-align: center;
+    margin: auto;
+    border : 2px solid rgb(151, 144, 76);
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.box input[type="submit"]:hover{
+    background-color: rgb(151, 144, 76);
+}

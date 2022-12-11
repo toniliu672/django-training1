@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img class="logo-size" src="{% static '/img/logos.png' %}" alt="">
+    </div>
+    <div class="navbar-wrap">
+      <div class="nav">
+        <a class="nav-item"href="/">Beranda</a>
+        <a class="nav-item"href="login">Login</a>
+        <a class="nav-item"href="register">Create Account</a>
+      </div>
+    </div>
+  </nav>
+    <div class="poster">
+      <div class="center">
+        <h1 >Welcome To Our Site</h1>
+        <p>Login to see all the data</p>
+      </div>
+    </div>
+
+</body>
+</html>
