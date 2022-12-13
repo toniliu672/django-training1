@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6o&16px9a9^s)i_9vy5_x08!rm@f13(!$e^z&3tz9^lp4l_enk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['toniliu673.pythonanywhere.com']
 
 
 # Application definition
@@ -53,10 +53,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'crud.urls'
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,13 +121,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static-files')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #DataFlair #User_Uploaded_Files
 MEDIA_URL = 'media/'
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
