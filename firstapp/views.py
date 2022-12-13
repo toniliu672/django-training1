@@ -55,8 +55,8 @@ def delete_book(request, book_id):
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
         email = request.POST['email']
+        password = request.POST['password']
         if User.objects.filter(email=email).exists():
             messages.info(request, "Email already registered")
             return redirect('register')
@@ -64,16 +64,16 @@ def register(request):
             messages.info(request, "Username already used")
             return redirect('register')
         else:
-            user = User.objects.create_user(username=username, email=email, password=password)
+            user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
-            return redirect('login')
+            return redirect('index')
     return render(request, 'register.html')
 
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-    
+
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
