@@ -1,1 +1,73 @@
-fuck you
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{detail.name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'library.css' %}">
+    <style>
+    .navbar1{
+        left: 0;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        min-width: 1280px;
+        height: 66px;
+        background-color: rgba(17,17,17,0.75);
+        box-shadow: 0 3px 7px 0 rgb(0 0 0 / 35%);
+    }
+
+    .kotak {  display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    }
+
+    @media only screen and (max-width: 600px) {
+    body {
+        .card : row row-cols-1 row-cols-md-2 g-4;
+      }
+    }
+    </style>
+</head>
+
+
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark mb-5">
+        <div class="navbar-wrap">
+            <div class="nav">
+            <a href="library" class="nav-item">Home</a>
+            <a href="{% url 'admin:index' %}" class="nav-item">Admin</a>
+            <a href="{% url 'upload-book' %}" class="nav-item">Upload Books</a>
+            <a href="logout" class="nav-item">Log Out</a>
+            </div>
+        </div>
+    </nav>
+<br>
+<div class= "container-fluid">
+    <div class="kotak">
+        <div class="card flex mt-4 center" style="width: 45rem ;">
+            <img class="img" width="auto" src="{{ detail.picture.url }}">
+        <div class="card-body flex">
+            <h6 class="judul">{{ detail.name }}</h6>
+            <p>{{ detail.describe }}</p>
+        <div class="card-footer bg-transparent border-dark ">
+            <p class="card-title">{{detail.author}}</p>
+    </div>
+
+
+</div>
+{% endblock %}
+
+
+
+
+

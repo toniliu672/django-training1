@@ -125,8 +125,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #DataFlair #User_Uploaded_Files
 MEDIA_URL = 'media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')

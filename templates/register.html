@@ -1,17 +1,47 @@
-<h1>Sign Up</h1>
-<form method="POST" action="register">
+{% load static %}
 
-    {% csrf_token %}
-    {% for message in messages %}
-    <h5 style="color:red">{{message}}</h5>
-    {% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'ss.css' %}">
+</head>
+<body>
+<div class="login-form">
 
-    <p>Username</p>
-    <input type="text" name="username">
-    <p>Password</p>
-    <input type="password" name="password">
-    <p>Email</p>
-    <input type="email" name="email"><br>
-    <input type="submit">
-    
-</form>
+    <form action="register" method="POST">
+    <div class="box">
+
+        <h1>Sign In</h1>
+
+    <div class="username">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" id="username" >
+    </div>
+
+    <div class="email">
+        {% csrf_token %}
+        <input type="text" name="email" placeholder="Email" id="email" >
+    </div>
+
+
+    <div class="password">
+        {% csrf_token %}
+        <input type="password" name="password" placeholder="Password" id="password"><br>
+
+    </div>
+    <div class="error">
+        {% for message in messages %}
+        <h5>{{ message }}</h5>
+        {% endfor %}
+    </div>
+    <input type="submit"/>
+    </div>
+
+</div>
+
+</body>
+</html>
